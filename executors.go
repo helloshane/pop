@@ -5,8 +5,8 @@ import (
 
 	"github.com/gobuffalo/pop/columns"
 	"github.com/gobuffalo/pop/logging"
-	"github.com/gobuffalo/uuid"
 	"github.com/gobuffalo/validate"
+	"github.com/gofrs/uuid"
 )
 
 // Reload fetch fresh data for a given model, using its ID.

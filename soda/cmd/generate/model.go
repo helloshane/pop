@@ -13,14 +13,13 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/gobuffalo/flect"
-	"github.com/gobuffalo/makr"
-	"github.com/pkg/errors"
-
 	"github.com/gobuffalo/fizz"
+	"github.com/gobuffalo/flect"
 	nflect "github.com/gobuffalo/flect/name"
+	"github.com/gobuffalo/makr"
 	"github.com/gobuffalo/pop"
 	"github.com/markbates/going/defaults"
+	"github.com/pkg/errors"
 )
 
 type model struct {
@@ -144,7 +143,7 @@ func (m *model) addID() {
 
 	if !m.HasUUID {
 		m.HasUUID = true
-		m.Imports = append(m.Imports, "github.com/gobuffalo/uuid")
+		m.Imports = append(m.Imports, "github.com/gofrs/uuid")
 	}
 
 	id := flect.New("id")
