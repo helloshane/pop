@@ -3,6 +3,7 @@ package pop
 import (
 	"fmt"
 	"net/url"
+	"path/filepath"
 	"regexp"
 	"strconv"
 	"strings"
@@ -54,6 +55,7 @@ func (cd *ConnectionDetails) withURL() error {
 	if cd.Dialect != "" && !dialectX.MatchString(ul) {
 		ul = cd.Dialect + "://" + ul
 	}
+	ul = filepath.ToSlash(ul)
 	u, err := url.Parse(ul)
 	if err != nil {
 		return errors.Wrapf(err, "couldn't parse %s", ul)

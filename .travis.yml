@@ -1,4 +1,4 @@
-dist: trusty
+os: linux
 sudo: required
 language: go
 
@@ -61,65 +61,68 @@ global_env:
 
 matrix:
   include:
-    - dist: trusty
+    - os: linux
       go: 1.9
       env: SODA_DIALECT="postgres"
       <<: *postgres
-    - dist: trusty
+    - os: linux
       go: "1.10"
       env: SODA_DIALECT="postgres"
       <<: *postgres
-    - dist: trusty
+    - os: linux
       go: "1.10"
       env: SODA_DIALECT="mysql_travis"
       <<: *mysql
-    - dist: trusty
+    - os: linux
       go: "1.10"
       env: SODA_DIALECT="cockroach"
       <<: *cockroach
-    - dist: trusty
+    - os: linux
       go: "1.10"
       env: SODA_DIALECT="cockroach_ssl"
       <<: *crdb210ssl
-    - dist: trusty
+    - os: linux
       go: "1.10"
       env: SODA_DIALECT="sqlite"
-    - dist: trusty
+    - os: linux
       go: "1.11"
       env: SODA_DIALECT="postgres"
       <<: *postgres
-    - dist: trusty
+    - os: linux
       go: "1.11"
       env: SODA_DIALECT="mysql_travis"
       <<: *mysql
-    - dist: trusty
+    - os: linux
       go: "1.11"
       env: SODA_DIALECT="cockroach"
       <<: *cockroach
-    - dist: trusty
+    - os: linux
       go: "1.11"
       env: SODA_DIALECT="cockroach_ssl"
       <<: *crdb210ssl
-    - dist: trusty
+    - os: linux
       go: "1.11"
       env: SODA_DIALECT="sqlite"
-    - dist: trusty
+    - os: windows
+      go: "1.11"
+      env: SODA_DIALECT="sqlite"
+    - os: linux
       go: "tip"
       env: SODA_DIALECT="postgres"
       <<: *postgres
-    - dist: trusty
+    - os: linux
       go: "tip"
       env: SODA_DIALECT="mysql_travis"
       <<: *mysql
-    - dist: trusty
+    - os: linux
       go: "tip"
       env: SODA_DIALECT="cockroach"
       <<: *cockroach
-    - dist: trusty
+    - os: linux
       go: "tip"
       env: SODA_DIALECT="cockroach_ssl"
       <<: *crdb210ssl
-    - dist: trusty
+    - os: linux
       go: "tip"
       env: SODA_DIALECT="sqlite"
   allow_failures:
